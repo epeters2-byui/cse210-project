@@ -33,3 +33,22 @@ class Program
 
     }
 }
+
+public class Address
+{
+    private string _country;
+
+    public string Country
+    {
+        get { return _country; }
+        set { _country = value ?? ""; }
+    }
+
+    public bool IsInUSA()
+    {
+        if (string.IsNullOrWhiteSpace(Country)) return false;
+        return Country.Trim().ToUpper() == "USA" || 
+               Country.Trim().ToUpper() == "UNITED STATES" || 
+               Country.Trim().ToUpper() == "UNITED STATES OF AMERICA";
+    }
+}

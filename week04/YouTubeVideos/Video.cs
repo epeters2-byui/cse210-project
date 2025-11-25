@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 public class Video
 {
-    // Member variables
+    // The main variables
     private string _title;
     private string _author;
-    private int _length; // in seconds
+    private int _length; // place in seconds
     private List<Comment> _comments;
 
-    // Constructor
+    // the constructor for title, author, length
     public Video(string title, string author, int length)
     {
         _title = title;
@@ -18,19 +18,19 @@ public class Video
         _comments = new List<Comment>();
     }
 
-    // Method to add a comment
+    // Method for adding comment
     public void AddComment(Comment comment)
     {
         _comments.Add(comment);
     }
 
-    // Method to return the number of comments
+    // Method for returning the number of comments
     public int GetNumberOfComments()
     {
         return _comments.Count;
     }
 
-    // Method to display video information and all comments
+    // Video information and all comments method todisplay
     public void DisplayVideoInfo()
     {
         Console.WriteLine($"Title: {_title}");
