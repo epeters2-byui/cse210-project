@@ -1,7 +1,8 @@
 using System;
 
-// Represents a product in an order.
-// Encapsulates fields and provides method to compute total cost for the product.
+// Representin product in order.
+// It encapsulates fields.
+// provides method to compute total amount of cost for the product.
 public class Product
 {
     private string _name;
@@ -9,7 +10,7 @@ public class Product
     private decimal _pricePerUnit;
     private int _quantity;
 
-    // Properties with validation
+    // Represent validation of properties
     public string Name
     {
         get { return _name; }
@@ -42,7 +43,7 @@ public class Product
         }
     }
 
-    // Constructor
+    // Constructor for name, productId, pricePerUnit and quantity (int)
     public Product(string name, string productId, decimal pricePerUnit, int quantity)
     {
         Name = name;
@@ -51,7 +52,7 @@ public class Product
         Quantity = quantity;
     }
 
-    // Default constructor
+    // Represents default constructor
     public Product()
     {
         Name = "";

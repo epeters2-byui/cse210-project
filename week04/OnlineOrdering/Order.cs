@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using System.Globalization;
 
 // Represents an order containing products and a customer.
-// Encapsulates internal product list and provides methods for packing label, shipping label, and total price.
+// Encapsulates internal product list
+//Provides methods for packing label, shipping label, and total price.
 public class Order
 {
     private List<Product> _products = new List<Product>();
     private Customer _customer;
 
-    // Constructor with customer
+    // Constructor for customer
     public Order(Customer customer)
     {
         Customer = customer;
         _products = new List<Product>();
     }
 
-    // Default constructor
+    // Set s default constructor
     public Order()
     {
         Customer = new Customer();
         _products = new List<Product>();
     }
 
-    // Customer property
+    // Represents customer property
     public Customer Customer
     {
         get { return _customer; }
@@ -41,13 +42,14 @@ public class Order
         _products.Add(product);
     }
 
-    // Return a copy of all products (protects internal list)
+    // A copy of all products are returned. 
+    // Protects internal list
     public List<Product> GetAllProducts()
     {
         return new List<Product>(_products);
     }
 
-    // Compute total price: sum of product totals + one-time shipping cost
+    // Compute total price, which is sum of product totals + one-time shipping cost
     public decimal GetTotalPrice()
     {
         decimal sum = 0m;
@@ -60,7 +62,7 @@ public class Order
         return sum + shipping;
     }
 
-    // Build packing label: list product names and IDs
+    // Packing label with list product names and IDs
     public string GetPackingLabel()
     {
         string label = "Packing Label:\n";
@@ -71,7 +73,8 @@ public class Order
         return label;
     }
 
-    // Build shipping label: customer name and full address on separate lines
+    // Build shipping label with customer name
+    // Full address on separate lines
     public string GetShippingLabel()
     {
         string label = "Shipping Label:\n";
@@ -83,7 +86,7 @@ public class Order
         return label;
     }
 
-    // Pretty format price in current culture currency
+    // Format price in current culture currency
     public string GetTotalPriceFormatted()
     {
         decimal total = GetTotalPrice();

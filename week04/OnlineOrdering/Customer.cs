@@ -1,19 +1,19 @@
 using System;
 
-// Represents a customer with a name and an Address. Encapsulates its fields.
+// Shows customer with name and Address by encapsulating fields.
 public class Customer
 {
     private string _name;
     private Address _address;
 
-    // Name property
+    // Names the property
     public string Name
     {
         get { return _name; }
         set { _name = value ?? ""; }
     }
 
-    // Address property (Address is its own class)
+    // For address property, with address is its own class.
     public Address Address
     {
         get { return _address; }
@@ -24,21 +24,22 @@ public class Customer
         }
     }
 
-    // Constructor
+    // Constructor for name and address
     public Customer(string name, Address address)
     {
         Name = name;
         Address = address;
     }
 
-    // Default constructor
+    // Set as default constructor
     public Customer()
     {
         Name = "";
         Address = new Address();
     }
 
-    // Returns true if the customer's address is in the USA (delegates to Address)
+    // This will returns true if the customer's address is in the USA 
+    // Delegates to Address
     public bool LivesInUSA()
     {
         if (Address == null) return false;
